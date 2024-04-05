@@ -17,7 +17,7 @@ const mongoose = require('mongoose');
 exports.dbConnect = () => {
     mongoose.connect(process.env.DB, {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
+        useUnifiedTopology: true,   
     })
     .then((data)=>console.log(`Db connect ${data.connection.host}`))
     // .catch(err=>console.log(err))
