@@ -20,7 +20,11 @@ var corsOptions = {
 app.use(
   cors({
     // origin: 'http://localhost:3000', // Allow requests only from this origin
-    origin:[ "http://localhost:3000",'https://gurez-live.netlify.app','https://versel-frontend-tqlk.vercel.app'], // Allow requests only from this origin
+    origin: [
+      "http://localhost:3000",
+      "https://gurez-live.netlify.app",
+      "https://versel-frontend-tqlk.vercel.app","https://gurez001.netlify.app"
+    ], // Allow requests only from this origin
     Headers: true,
     exposedHeaders: "Set-Cookie",
     methods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"], // Allow only specified HTTP methods
