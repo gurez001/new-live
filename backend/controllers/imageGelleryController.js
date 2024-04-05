@@ -32,6 +32,7 @@ exports.createImageGellery = catchAsyncError(async (req, res, next) => {
   const images = [];
 
   const avatarPath = req.files;
+  console.log(avatarPath)
   avatarPath.forEach((item, i) => {
     images.push({
       fieldname: item.fieldname,
