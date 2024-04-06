@@ -15,7 +15,9 @@ const sendToken = (user, statusCode, res) => {
           sameSite: "none", // enforcement type
           partitioned: false, // store using partitioned storage
         };
-    res.status(statusCode).cookie('token',token,option).json({
+    res.status(statusCode)
+    //.cookie('token',token,option)
+    .json({
         success:true,
         token,
         user,
