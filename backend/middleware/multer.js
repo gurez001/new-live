@@ -3,8 +3,9 @@ const path = require('path')
 const multer = require('multer');
 
 // Set up multer
-const distfolder = path.join(__dirname, "../../frontend/public/");
-const uploadFolder = path.join(distfolder, 'uploads'); // Define the uploads folder path
+// const distfolder = path.join(__dirname, "../../frontend/public/");
+
+const uploadFolder = path.join(__dirname, '../uploads');
 
 // Ensure that the upload folder exists, if not, create it
 if (!fs.existsSync(uploadFolder)) {
