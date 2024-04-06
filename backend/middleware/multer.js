@@ -1,23 +1,16 @@
-const fs = require('fs');
 const path = require('path')
 const multer = require('multer');
 
 // Set up multer
-// const distfolder = path.join(__dirname, "../../frontend/public/");
-
-const uploadFolder = path.join(__dirname, '../uploads');
-
-// Ensure that the upload folder exists, if not, create it
-if (!fs.existsSync(uploadFolder)) {
-    fs.mkdirSync(uploadFolder, { recursive: true });
-}
+const distfolder = path.join(__dirname, "../../frontend/public/");
+const uploadFolder = path.join(distfolder, 'uploads'); // Define the uploads folder path
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, uploadFolder); // Specify the destination directory for uploaded files
+        cb(null, 'uploads/'); // Specify the destination directory for uploaded files
     },
     filename: (req, file, cb) => {
-    //    console.log(file)
+       console.log(file)
         cb(null, Date.now() + '-' + file.originalname);// Use the original file name
     },
 });
