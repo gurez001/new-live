@@ -12,7 +12,7 @@ exports.isAuthenticatedUser = async (req, res, next) => {
   // const tokenssss = req.body;
   console.log(token);
 
-  if (t.length===0) {
+  if (!token) {
     return next(new ErrorHandler("Please log in first", 400));
   }
   try {
