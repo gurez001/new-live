@@ -7,8 +7,8 @@ exports.isAuthenticatedUser = async (req, res, next) => {
   // const { token } = req.cookies;
   const token = req.body.headers.Authorization;
   // const tokenssss = req.body;
-  // console.log('token',token);
-  // console.log('tokenssss',tokenssss);
+  console.log('token',token);
+  console.log('tokenssss',req.body);
 
   if (!token) {
     return next(new ErrorHandler("Please log in first", 400));
