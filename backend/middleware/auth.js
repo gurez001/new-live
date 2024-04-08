@@ -5,18 +5,18 @@ const ErrorHandler = require("../utils/errorhandler");
 exports.isAuthenticatedUser = async (req, res, next) => {
   console.log(req.headers);
   // const { token } = req.cookies;
-  // const token = req.headers.authorization;
-  const cookie_token = req.headers.cookie;
+  const token = req.headers.authorization;
+  // const cookie_token = req.headers.cookie;
 
-  const t = cookie_token && cookie_token.split('=')
+  // const t = cookie_token && cookie_token.split('=')
   // const tokenssss = req.body;
-  console.log(t[1]);
+  console.log(token);
 
   if (t.length===0) {
     return next(new ErrorHandler("Please log in first", 400));
   }
   try {
-    const decoded = jwt.verify(t[1], process.env.JWTSECRET);
+    const decoded = jwt.verify(token, process.env.JWTSECRET);
 
     req.user = await User.findById(decoded.id);
     next();
