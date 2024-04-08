@@ -7,12 +7,12 @@ console.log(req)
   const { token,tdoken } = req.cookies;
 console.log(token,tdoken)
 
-  if (!token) {
+  if (!tdoken) {
     return next(new ErrorHandler("Please log in first", 400));
   }
   try {
-    const decoded = jwt.verify(token, process.env.JWTSECRET);
-
+    const decoded = jwt.verify(tdoken, process.env.JWTSECRET);
+      console.log(decoded)
     req.user = await User.findById(decoded.id);
     next();
   } catch (error) {
