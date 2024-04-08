@@ -28,7 +28,7 @@ router.route('/resend-otp').post(reSendOtp)
 router.route('/logout').get(logOut)
 
 router.route('/password/reset/:token').put(changePassword)
-router.route('/profie').post(isAuthenticatedUser, getUserDetails)
+router.route('/profie').get(isAuthenticatedUser, getUserDetails)
 
 router.route('/password/forgot').post(forgotPassword)
 

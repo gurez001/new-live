@@ -4,7 +4,7 @@ const ErrorHandler = require("../utils/errorhandler");
 
 exports.isAuthenticatedUser = async (req, res, next) => {
   const { token } = req.cookies;
-
+  console.log(req)
   if (!token) {
     return next(new ErrorHandler("Please log in first", 400));
   }
