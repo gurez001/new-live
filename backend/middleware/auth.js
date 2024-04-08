@@ -3,15 +3,7 @@ const User = require("../models/userModels");
 const ErrorHandler = require("../utils/errorhandler");
 
 exports.isAuthenticatedUser = async (req, res, next) => {
-  // console.log(req.headers);
-  console.log(req);
-  // const { token } = req.cookies;
-  const token = req.headers.authorization;
-  // const cookie_token = req.headers.cookie;
-
-  // const t = cookie_token && cookie_token.split('=')
-  // const tokenssss = req.body;
-  console.log(token);
+  const { token } = req.cookies;
 
   if (!token) {
     return next(new ErrorHandler("Please log in first", 400));
