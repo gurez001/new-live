@@ -16,7 +16,7 @@ const sendToken = (user, statusCode, res) => {
           partitioned: false, // store using partitioned storage
         };
     res.status(statusCode)
-    //.cookie('token',token,option)
+    .cookie('token',token,option)
     .json({
         success:true,
         token,
