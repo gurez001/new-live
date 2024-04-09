@@ -121,7 +121,7 @@ exports.createProducts = catchAsyncError(async (req, res, next) => {
     product_Shipping_class: Shipping_class,
     product_category: category,
     product_subcategory: subcategory,
-    product_images: imageId,
+    product_images: imageId.split(","),
     // product_regular_price,
     // product_sale_price,
     Default_value,
